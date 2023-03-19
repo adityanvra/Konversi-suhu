@@ -1,0 +1,48 @@
+
+using namespace std;
+int main(){
+	int suhu, konversi, c, k, f;
+	char skala, hasil;
+	
+	cout << "+-----------------------+" << endl;
+    cout << "| PROGRAM KONVERSI SUHU |" << endl;
+    cout << "+-----------------------+" << endl;
+	cout << "C = Celcius " << endl;
+    cout << "K = Kelvin " << endl;
+    cout << "F = Farenheit " << endl;
+    cout << "Masukkan Skala Asal : ";
+	cin >> skala;
+	cout << "Masukkan Suhu Asal dalam " << skala << " : ";
+	cin >> suhu;
+	cout << "Masukkan Skala Tujuan : ";
+	cin >> hasil;
+	
+	switch(skala){
+		case 'c':
+			if(hasil == 'k' ||'K'){
+				konversi = suhu+273;
+			}else if(hasil == 'f'||'F'){
+				konversi = ((9/5)*suhu) + 32;		
+			}
+			break;
+		case 'f':
+		    if(hasil == 'c' || 'C' ){
+		    	konversi = 5/9*(suhu - 32);	
+			}else if(hasil == 'k' || 'K' ){
+				konversi = (suhu-32)*5/9+273;
+			}
+			break;
+		case'k'	:
+			if(hasil == 'c' || 'C' ){
+				konversi = suhu-273;
+			}
+			break;
+		default:
+			cout << "Inputan salah ";
+			
+	}
+    cout << suhu << " derajat " << skala << " sama dengan " << konversi << " derajat " << hasil;
+	
+	return 0;
+	
+}
